@@ -1,0 +1,51 @@
+diff -Nru cgterm-1.6-orig/Makefile cgterm-1.6/Makefile
+--- cgterm-1.6-orig/Makefile	2004-02-06 19:11:45.000000000 +0100
++++ cgterm-1.6/Makefile	2004-02-12 20:16:29.303463567 +0100
+@@ -1,4 +1,4 @@
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ EXESUFFIX=
+ SOCKETLIBS=
+ 
+@@ -8,8 +8,8 @@
+ # for solaris:
+ #SOCKETLIBS = -lsocket -lnsl
+ 
+-CC=gcc
+-CFLAGS=-O3 -Wall `sdl-config --cflags` -DPREFIX=\"$(PREFIX)\"
++#CC=gcc
++CFLAGS+=-Wall `sdl-config --cflags` -DPREFIX=\"$(PREFIX)\"
+ LDFLAGS=`sdl-config --libs` $(SOCKETLIBS)
+ 
+ 
+@@ -64,23 +64,23 @@
+ 	$(CC) -g -O3 -Wall -o testimage $^
+ 
+ install: all installdirs
+-	strip cgterm$(EXESUFFIX)
++#	strip cgterm$(EXESUFFIX)
+ 	cp cgterm$(EXESUFFIX) $(PREFIX)/bin/
+ 	cp cgchat$(EXESUFFIX) $(PREFIX)/bin/
+ 	cp *.bmp *.kbd *.wav $(PREFIX)/share/cgterm/
+ #	cp cgterm.cfg $(PREFIX)/etc/
+ #	cp cgchat.cfg $(PREFIX)/etc/
+ 
+-installdirs: $(PREFIX)/bin $(PREFIX)/share $(PREFIX)/share/cgterm $(PREFIX)/etc
++installdirs: $(PREFIX)/bin $(PREFIX)/share $(PREFIX)/share/cgterm
+ 
+ $(PREFIX)/bin:
+-	mkdir $(PREFIX)/bin > /dev/null 2>&1
++	mkdir -p $(PREFIX)/bin > /dev/null 2>&1
+ $(PREFIX)/share:
+-	mkdir $(PREFIX)/share > /dev/null 2>&1
++	mkdir -p $(PREFIX)/share > /dev/null 2>&1
+ $(PREFIX)/share/cgterm:
+-	mkdir $(PREFIX)/share/cgterm > /dev/null 2>&1
+-$(PREFIX)/etc:
+-	mkdir $(PREFIX)/etc > /dev/null 2>&1
++	mkdir -p $(PREFIX)/share/cgterm > /dev/null 2>&1
++#$(PREFIX)/etc:
++#	mkdir -p $(PREFIX)/etc > /dev/null 2>&1
+ 
+ clean:
+ 	rm -f cgterm$(EXESUFFIX) cgchat$(EXESUFFIX) testkbd$(EXESUFFIX) *.o *~
