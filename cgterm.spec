@@ -2,7 +2,7 @@ Summary:	A C/G graphics C64 BBS client
 Summary(pl):	Klient C64 BBS obs³uguj±cy grafikê C/G
 Name:		cgterm
 Version:	1.6
-Release:	1
+Release:	2
 License:	BSD-like (see docs)
 Group:		Networking
 Source0:	http://www.paradroid.net/cgterm/%{name}-%{version}.tar.gz
