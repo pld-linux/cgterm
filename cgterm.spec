@@ -6,6 +6,7 @@ Release:	2
 License:	BSD-like (see docs)
 Group:		Networking
 Source0:	http://www.paradroid.net/cgterm/%{name}-%{version}.tar.gz
+# Source0-md5:	5b8f81ea8a2c0612d2998f05fd87ec40
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.paradroid.net/cgterm/
 BuildRequires:	SDL-devel
