@@ -1,5 +1,5 @@
 Summary:	A C/G graphics C64 BBS client
-Summary(pl.UTF-8):   Klient C64 BBS obsługujący grafikę C/G
+Summary(pl.UTF-8):	Klient C64 BBS obsługujący grafikę C/G
 Name:		cgterm
 Version:	1.6
 Release:	2
